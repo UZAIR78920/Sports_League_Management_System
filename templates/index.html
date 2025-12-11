@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚽ League Management System</h1>
+            <p class="subtitle">Manage your leagues, teams, and statistics</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('leagues')">Leagues</button>
+            <button class="tab-btn" onclick="showTab('teams')">Teams</button>
+            <button class="tab-btn" onclick="showTab('statistics')">Statistics</button>
+        </div>
+
+        <!-- Leagues Tab -->
+        <div id="leagues-tab" class="tab-content active">
+            <div class="section">
+                <h2>Create New League</h2>
+                <form id="create-league-form" class="form">
+                    <div class="form-group">
+                        <label>League ID:</label>
+                        <input type="number" id="league-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>League Name:</label>
+                        <input type="text" id="league-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Country:</label>
+                        <input type="text" id="league-country" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create League</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>All Leagues</h2>
+                <button onclick="loadLeagues()" class="btn btn-secondary">Refresh</button>
+                <div id="leagues-list" class="cards-grid"></div>
+            </div>
+        </div>
+
+        <!-- Teams Tab -->
+        <div id="teams-tab" class="tab-content">
+            <div class="section">
+                <h2>Add Team to League</h2>
+                <form id="add-team-form" class="form">
+                    <div class="form-group">
+                        <label>League ID:</label>
+                        <input type="number" id="team-league-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Team ID:</label>
+                        <input type="number" id="team-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Team Name:</label>
+                        <input type="text" id="team-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Manager:</label>
+                        <input type="text" id="team-manager" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Team</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>View Teams</h2>
+                <div class="form-group">
+                    <label>Select League:</label>
+                    <select id="view-teams-league" class="select">
+                        <option value="">Select a league...</option>
+                    </select>
+                    <button onclick="loadTeams()" class="btn btn-secondary">Load Teams</button>
+                </div>
+                <div id="teams-list" class="cards-grid"></div>
+            </div>
+        </div>
+
+        <!-- Statistics Tab -->
+        <div id="statistics-tab" class="tab-content">
+            <div class="section">
+                <h2>Update Statistics</h2>
+                <form id="update-stats-form" class="form">
+                    <div class="form-group">
+                        <label>League ID:</label>
+                        <input type="number" id="stats-league-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Statistic ID:</label>
+                        <input type="number" id="stat-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description:</label>
+                        <input type="text" id="stat-description" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Team ID:</label>
+                        <input type="number" id="stat-team-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Value:</label>
+                        <input type="number" id="stat-value" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Statistics</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>View Statistics</h2>
+                <div class="form-group">
+                    <label>Select League:</label>
+                    <select id="view-stats-league" class="select">
+                        <option value="">Select a league...</option>
+                    </select>
+                    <button onclick="loadStatistics()" class="btn btn-secondary">Load Statistics</button>
+                </div>
+                <div id="stats-list"></div>
+            </div>
+        </div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
