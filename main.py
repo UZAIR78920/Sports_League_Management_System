@@ -118,19 +118,19 @@ class LeagueManager:
         else:
             print(f"League ID {league_id} not found.")
 
-leagues = LeagueManager()
+# leagues = LeagueManager()
 
-leagues.create_league(1, "Premier League", "England")
-leagues.update_league(1, "English Premier League")
-leagues.delete_league(1)
+# leagues.create_league(1, "Premier League", "England")
+# leagues.update_league(1, "English Premier League")
+# leagues.delete_league(1)
 
-leagues.create_league(2, "Indian Premier League", "India")
-leagues.manage_league_teams(2, 101, 'add', "A", "Manager A")
-leagues.manage_league_teams(2, 102, 'add', "B", "Manager B")
-leagues.manage_league_teams(2, 101, 'remove')
+# leagues.create_league(2, "Indian Premier League", "India")
+# leagues.manage_league_teams(2, 101, 'add', "A", "Manager A")
+# leagues.manage_league_teams(2, 102, 'add', "B", "Manager B")
+# leagues.manage_league_teams(2, 101, 'remove')
 
-leagues.create_league(3, "Premier League", "England")
-leagues.manage_league_teams(3, 101, 'add', "C", "Manager A")
-leagues.track_league_statistics(3, 201, "Goals Scored")
-leagues.update_statistics(3, 201, 101, 10)
-leagues.track_league_statistics(3, 201, "Goals Scored")
+# leagues.create_league(3, "Premier League", "England")
+# leagues.manage_league_teams(3, 101, 'add', "C", "Manager A")
+# leagues.track_league_statistics(3, 201, "Goals Scored")
+# leagues.update_statistics(3, 201, 101, 10)
+# leagues.track_league_statistics(3, 201, "Goals Scored")
