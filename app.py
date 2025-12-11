@@ -7,7 +7,7 @@ from typing import Optional, List, Dict
 import uvicorn
 
 # Import your existing league classes
-from league_classes import LeagueManager, Team
+from main import LeagueManager, Team
 
 app = FastAPI(title="League Management System")
 
@@ -161,4 +161,5 @@ async def get_statistics(league_id: int):
     return stats
 
 if __name__ == "__main__":
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
