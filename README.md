@@ -67,64 +67,6 @@ python app.py
 6. **Open in browser**
 Navigate to: `http://localhost:8000`
 
-## Deployment on Render
-
-### Step 1: Prepare Your Repository
-
-Ensure your project has these files:
-- `app.py`
-- `league_classes.py`
-- `requirements.txt`
-- `templates/index.html`
-- `static/style.css`
-- `static/script.js`
-
-### Step 2: Create `render.yaml` (Optional)
-
-Create a `render.yaml` file in your project root:
-
-```yaml
-services:
-  - type: web
-    name: league-management-system
-    env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
-```
-
-### Step 3: Deploy on Render
-
-1. **Push to GitHub**
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
-
-2. **Create Render Account**
-- Go to [render.com](https://render.com)
-- Sign up or log in
-
-3. **Create New Web Service**
-- Click "New +" → "Web Service"
-- Connect your GitHub repository
-- Configure:
-  - **Name**: league-management-system
-  - **Environment**: Python 3
-  - **Build Command**: `pip install -r requirements.txt`
-  - **Start Command**: `uvicorn app:app --host 0.0.0.0 --port $PORT`
-  - **Plan**: Free (or choose paid plan)
-
-4. **Deploy**
-- Click "Create Web Service"
-- Wait for deployment to complete
-- Your app will be live at: `https://your-app-name.onrender.com`
 
 ## API Endpoints
 
@@ -209,5 +151,6 @@ MIT License
 Your Name
 
 ## Support
+
 
 For issues or questions, please open an issue on GitHub.
